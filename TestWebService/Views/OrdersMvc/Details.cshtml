@@ -1,0 +1,99 @@
+@model TestWebService.Models.Order
+
+@{
+    ViewData["Title"] = "Детали заказа";
+}
+
+<h1>Детали заказа</h1>
+
+<hr />
+
+<div class="card">
+    <div class="card-body">
+
+        <div class="row mb-2">
+            <div class="col-md-3 fw-bold">
+                Номер заказа
+            </div>
+            <div class="col-md-9">
+                @Model.OrderNumber
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-3 fw-bold">
+                Город отправителя
+            </div>
+            <div class="col-md-9">
+                @Model.SenderCity
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-3 fw-bold">
+                Адрес отправителя
+            </div>
+            <div class="col-md-9">
+                @Model.SenderAddress
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-3 fw-bold">
+                Город получателя
+            </div>
+            <div class="col-md-9">
+                @Model.ReceiverCity
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-3 fw-bold">
+                Адрес получателя
+            </div>
+            <div class="col-md-9">
+                @Model.ReceiverAddress
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-3 fw-bold">
+                Вес груза
+            </div>
+            <div class="col-md-9">
+                @Model.Weight кг
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-3 fw-bold">
+                Дата забора груза
+            </div>
+            <div class="col-md-9">
+                @Model.PickupDate
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<br />
+
+<div>
+
+    <form asp-action="Delete" method="post" style="display:inline;">
+        <input type="hidden" name="id" value="@Model.Id" />
+
+        <button type="submit"
+                class="btn btn-danger"
+                onclick="return confirm('Удалить заказ?');">
+            Удалить
+        </button>
+    </form>
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+        Назад
+    </a>
+
+</div>

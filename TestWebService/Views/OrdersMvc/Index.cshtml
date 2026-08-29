@@ -1,0 +1,85 @@
+@model IEnumerable<TestWebService.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Заказы</h1>
+
+<a asp-action="Create" class="btn btn-primary mb-3">
+    Создать заказ
+</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SenderCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SenderAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiverCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiverAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PickupDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.OrderNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.SenderCity)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.SenderAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ReceiverCity)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ReceiverAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.PickupDate)
+            </td>
+            <td>
+                <a asp-action="Details"
+                   asp-route-id="@item.Id"
+                   class="btn btn-info">
+                    Детали
+                </a>
+                <form asp-action="Delete"
+                      method="post"
+                      style="display:inline;"
+                      onsubmit="return confirm('Удалить заказ?');">
+
+                    <input type="hidden" name="id" value="@item.Id" />
+
+                    <button type="submit" class="btn btn-danger">
+                        Удалить
+                    </button>
+
+                </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
