@@ -33,6 +33,10 @@ cd TestWebApp
 ```bash
 dotnet ef database update
 ```
+Если команда `dotnet ef` недоступна, установить инструмент:
+```bash
+dotnet tool install --global dotnet-ef
+```
 4. Запустить:
 ```bash
 dotnet run
