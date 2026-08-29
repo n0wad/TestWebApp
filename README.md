@@ -43,5 +43,5 @@ dotnet run
 ```
 
 ### После запуска
-- Веб интерфейс: https://localhost:7039/OrdersMvc
-- Swagger: https://localhost:7039/swagger
+- Веб интерфейс: https://localhost:{port}/OrdersMvc
+- Swagger: https://localhost:{port}/swagger
