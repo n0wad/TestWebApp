@@ -21,10 +21,22 @@
 Требования:
 - .NET 9 SDK
 
-1. Клонировать проект: git clone https://github.com/n0wad/TestWebApp.git
-2. Перейти в папку проекта: cd TestWebApp
-3. Применить миграции: dotnet ef database update
-4. Запустить: dotnet run
+1. Клонировать проект:
+```bash
+git clone https://github.com/n0wad/TestWebApp.git
+```
+2. Перейти в папку проекта:
+```bash
+cd TestWebApp
+```
+3. Применить миграции:
+```bash
+dotnet ef database update
+```
+4. Запустить:
+```bash
+dotnet run
+```
 
 ### После запуска
 - Веб интерфейс: https://localhost:7039/OrdersMvc
